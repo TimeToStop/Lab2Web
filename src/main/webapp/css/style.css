@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'main-font';
+    src: url('../fonts/main-font.ttf') format("opentype");
+}
+
+* {
+    font-family: 'main-font';
+}
+
+#error {
+    text-align: center;
+    color: #FF0000;
+}
+
+body {
+    margin: 0px;
+}
+
+.content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    background-color: #f8f6f6;
+}
+
+.head-label {
+    display: inline-block;
+    margin: 5px 0px;
+    color: #696969;
+    font-size: 30px;
+}
+
+.menu {
+    float: right;
+    margin: 0px;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #696969;
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+    margin:  11.4px 0px;
+}
+
+.menu a:hover {
+    color: #222222;
+}
+
+.maininfo {
+    background-color: #353535;
+    color: #d6d5d5;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+}
+
+.content-header {
+    text-align: center;
+    margin: 0px;
+}
+
+.coord {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form {
+    padding: 10px 0px;
+}
+
+.form-inner {
+    text-align: center;
+}
+
+.form-value {
+    margin: 5px 0px;
+}
+
+#X {
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.center-buttons input {
+    color: #FFFFFF;
+    border: none;
+    background-color: #F6744B;
+    border-radius: 3px;
+    height: 36px;
+    font-size: 17px;
+}
+
+.center-buttons input:hover {
+    background-color: #e64919;
+}
+
+.y-button {
+    text-align: center;
+    width: 30px;
+    background-color: #d6d5d5;
+    color: #000000;
+    border-radius: 2px;
+    border: none;
+}
+
+.table {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    text-align: center;
+}
+
+table, td, tr {
+    border: 1px solid black;
+}
+
+.content-canvas {
+    text-align: center;
+}

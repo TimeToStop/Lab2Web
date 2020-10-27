@@ -1,0 +1,24 @@
+package beans;
+
+public class HitManager
+{
+    public static boolean isHit(double x, double y, double r)
+    {
+        boolean success = false;
+
+        if(x >= 0 && y >= 0)
+        {
+            success = (y <= -x + r);
+        }
+        else if (x >= 0 && y <= 0)
+        {
+            success = (x <= r && y >= -r);
+        }
+        else if (x <= 0 && y <= 0)
+        {
+            success = (x * x + y * y <= (r * r)/4);
+        }
+
+        return success;
+    }
+}

@@ -1,0 +1,110 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="storage" class="beans.Storage" scope="session"/>
+<jsp:useBean id="dataviewer" class="beans.DataView" scope= "session"/>
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Lab2</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <div class="content">
+                <div>
+                    <h2 class="head-label">WebProgramming</h2>
+                    <ul class="menu">
+                        <li>
+                            <a href="https://github.com/TimeToStop" target="blank">User</a>
+                        </li>
+                        <li>
+                            <a href="https://isu.ifmo.ru/pls/apex/f?p=2143:GR:120853349933398::NO::GR_GR,GR_DATE,GR_TYPE:p3211,01.09.2020,group" target="blank">Group</a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/" target="blank">Other</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="maininfo">
+            <div class="content">
+                <h1 class="content-header">Лабораторная работа №2</h1>
+                <h3 class="content-header">По веб-программированию</h3>
+                <h3 class="content-header">Вариант №4544</h3>
+                <h3 class="content-header">Выполнил: Ратушняк Евгений </h3>
+                <h3 class="content-header">Группа: P3211</h3>
+            </div>
+        </div>
+        <div class="coord">
+            <div class="content">
+                  <div class="content-canvas">
+                       <canvas id="canvas">
+                           <p>Ваш браузер не поддерживает рисование</p>
+                       </canvas>
+                  </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="content">
+                <form method="GET" action="${pageContext.request.contextPath}/index" onsubmit="return validate();">
+                    <div class="form-inner">
+                        <div class="form-value">
+                            <label for="X">X (-5, 5):</label>
+                            <input type="text" id="X" name="X" value=""><br/>
+                        </div>
+                        <div class="form-value">
+                           <span>Y:</span>
+                           <input type="hidden" name="Y" value="" id="Y"/>
+                           <input type="button" class="y-button" value="-5" onclick="validateY(this);"/>
+                           <input type="button" class="y-button" value="-4" onclick="validateY(this);"/>
+                           <input type="button" class="y-button" value="-3" onclick="validateY(this);"/>
+                           <input type="button" class="y-button" value="-2" onclick="validateY(this);"/>
+                           <input type="button" class="y-button" value="-1" onclick="validateY(this);"/>
+                           <input type="button" class="y-button" value="0"  onclick="validateY(this);"/>
+                           <input type="button" class="y-button" value="1"  onclick="validateY(this);"/>
+                           <input type="button" class="y-button" value="2"  onclick="validateY(this);"/>
+                           <input type="button" class="y-button" value="3"  onclick="validateY(this);"/>
+                        </div>
+                        <div class="form-value">
+                            <span>R:</span>
+                            <input name="R" class="r-radio" type="radio" value="1" checked id="radio1"/>
+                            <label for="radio1">1</label>
+                            <input name="R" class="r-radio" type="radio" value="1.5" id="radio15"/>
+                            <label for="radio15">1.5</label>
+                            <input name="R" class="r-radio" type="radio" value="2" id="radio2"/>
+                            <label for="radio2">2</label>
+                            <input name="R" class="r-radio" type="radio" value="2.5" id="radio25"/>
+                            <label for="radio25">2.5</label>
+                            <input name="R" class="r-radio" type="radio" value="3" id="radio3"/>
+                            <label for="radio3">3</label>
+                        </div>
+                        <div class="center-buttons">
+                            <input class="button" type="submit" value="Отправить"/>
+                            <input class="button" type="reset" value="Очистить" id="reset"/>
+                        </div>
+                    </div>
+                </form>
+                <p id="error">
+                    <% if(request.getAttribute("error") != null)
+                    {
+                      out.println(request.getAttribute("error"));
+                    }
+                    %>
+                </p>
+            </div>
+        </div>
+        <div class="table">
+            <div class="content">
+                <%
+                    out.print(dataviewer.getAsHtmlTable(storage.getAttempts()));
+                %>
+            </div>
+        </div> 
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/form.js"></script>
+    <script src="${pageContext.request.contextPath}/js/canvas.js"></script>
+    <script src="${pageContext.request.contextPath}/js/canvas-checker.js"></script>
+</html>

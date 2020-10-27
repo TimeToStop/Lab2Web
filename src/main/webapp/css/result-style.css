@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'main-font';
+    src: url('../fonts/main-font.ttf') format("opentype");
+}
+
+* {
+    font-family: 'main-font';
+}
+
+body {
+    margin: 0px;
+    background-color: #f8f6f6;
+}
+
+.content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    background-color: #f8f6f6;
+}
+
+.head-label {
+    display: inline-block;
+    margin: 5px 0px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #696969;
+    font-size: 30px;
+}
+
+.header a:hover {
+    color: #222222;
+}
+
+.result-table .table {
+    padding: 10px 0px;
+    background-color: #f8f6f6;
+}
+
+.content-canvas {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    color: #696969;
+    font-size: 30px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+table td {
+    text-align: center;
+}
+
+table, td, tr {
+    border: 1px solid black;
+}
