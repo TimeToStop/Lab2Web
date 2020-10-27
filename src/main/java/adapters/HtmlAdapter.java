@@ -25,9 +25,9 @@ public class HtmlAdapter
                 .append("<td>Время работы скрипта</td>")
                 .append("</tr>");
 
-        for(Attempt attempt : attempts)
+        for(int i = attempts.size() - 1; i >= 0; i--)
         {
-            b.append(HtmlAdapter.toRow(attempt));
+            b.append(HtmlAdapter.toRow(attempts.get(i)));
         }
 
         b.append("</table>");
